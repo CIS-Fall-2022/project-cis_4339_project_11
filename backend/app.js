@@ -50,3 +50,5 @@ app.use(function (err, req, res, next) {
     err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
+
+console.log(process.env.MONGO_URL)
