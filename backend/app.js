@@ -51,4 +51,4 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 
-console.log(process.env.MONGO_URL)
+console.log(typeof process.env.MONGO_URL)

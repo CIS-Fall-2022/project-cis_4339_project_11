@@ -2,6 +2,8 @@ const uuid = require('uuid');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+require("dotenv").config();  //To load ORGANIZATION variable
+
 //collection for intakeData
 let primaryDataSchema = new Schema({
     _id: { type: String, default: uuid.v1 },
@@ -40,6 +42,11 @@ let primaryDataSchema = new Schema({
         zip: {
             type: String,
         }
+    },
+    organization: { //Adds organization field with a default value, found on https://mongoosejs.com/docs/defaults.html
+        type: String,
+        required: true,
+        default: process.env.ORGANIZATION //Will change depending on the .env variable.
     }
 }, {
     collection: 'primaryData',
@@ -82,9 +89,22 @@ let eventDataSchema = new Schema({
     },
     attendees: [{
         type: String
-    }]
+    }],
+    organization: {
+        type: String,
+        required: true,
+        default: process.env.ORGANIZATION
+    }
 }, {
     collection: 'eventData'
+});
+
+let organizationDataSchema = new Schema({
+    _id: { type: String, default: uuid.v1},
+    organizationName: {
+        type: String,
+        require: true
+    }
 });
 
 // create models from mongoose schemas
