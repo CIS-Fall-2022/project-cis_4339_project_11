@@ -110,6 +110,7 @@ let organizationDataSchema = new Schema({
 // create models from mongoose schemas
 const primarydata = mongoose.model('primaryData', primaryDataSchema);
 const eventdata = mongoose.model('eventData', eventDataSchema);
+const organizationdata = mongoose.model('organizationData', organizationDataSchema)
 
 // package the models in an object to export 
-module.exports = { primarydata, eventdata }
+module.exports = { primarydata, eventdata, organizationdata }
