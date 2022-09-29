@@ -5,9 +5,12 @@ const router = express.Router();
 let { primarydata } = require("../models/models"); 
 let { eventdata } = require("../models/models"); 
 
+//allow using a .env file
+require("dotenv").config(); 
+
 //GET all entries
 router.get("/", (req, res, next) => { 
-    primarydata.find( 
+    primarydata.find( {organization: process.env.ORGANIZATION}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
         (error, data) => {
             if (error) {
                 return next(error);
@@ -21,7 +24,7 @@ router.get("/", (req, res, next) => {
 //GET single entry by ID
 router.get("/id/:id", (req, res, next) => {
     primarydata.find( 
-        { _id: req.params.id }, 
+        { _id: req.params.id, organization: process.env.ORGANIZATION}, //Added ORGANIZATION filter, because a client can sign up for different organizations
         (error, data) => {
             if (error) {
                 return next(error);
@@ -40,11 +43,12 @@ router.get("/search/", (req, res, next) => {
         dbQuery = { firstName: { $regex: `^${req.query["firstName"]}`, $options: "i" }, lastName: { $regex: `^${req.query["lastName"]}`, $options: "i" } }
     } else if (req.query["searchBy"] === 'number') {
         dbQuery = {
-            "phoneNumbers.primaryPhone": { $regex: `^${req.query["phoneNumbers.primaryPhone"]}`, $options: "i" }
+            "phoneNumbers.primaryPhone": { $regex: `^${req.query["phoneNumbers.primaryPhone"]}`, $options: "i" },
+            organization: process.env.ORGANIZATION //Queries phone numbers only within the organization's instance
         }
     };
     primarydata.find( 
-        dbQuery, 
+        dbQuery,
         (error, data) => { 
             if (error) {
                 return next(error);

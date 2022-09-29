@@ -46,7 +46,7 @@ let primaryDataSchema = new Schema({
     organization: { //Adds organization field with a default value, found on https://mongoosejs.com/docs/defaults.html
         type: String,
         required: true,
-        default: process.env.ORGANIZATION //Will change depending on the .env variable.
+        default: process.env.ORGANIZATION //Will change depending on the .env variable. In the .env file add ORGANIZATION = <Organization object ID>
     }
 }, {
     collection: 'primaryData',
@@ -99,7 +99,7 @@ let eventDataSchema = new Schema({
     collection: 'eventData'
 });
 
-let organizationDataSchema = new Schema({
+let organizationDataSchema = new Schema({ //Creates schema for data that will be used for the "organization" items in the primaryData and eventData collections
     _id: { type: String, default: uuid.v1},
     organizationName: {
         type: String,
