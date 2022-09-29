@@ -105,6 +105,8 @@ let organizationDataSchema = new Schema({ //Creates schema for data that will be
         type: String,
         require: true
     }
+}, {
+    collection: 'organizationData'
 });
 
 // create models from mongoose schemas
