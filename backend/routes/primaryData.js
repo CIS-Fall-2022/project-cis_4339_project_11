@@ -40,7 +40,11 @@ router.get("/id/:id", (req, res, next) => {
 router.get("/search/", (req, res, next) => { 
     let dbQuery = "";
     if (req.query["searchBy"] === 'name') {
-        dbQuery = { firstName: { $regex: `^${req.query["firstName"]}`, $options: "i" }, lastName: { $regex: `^${req.query["lastName"]}`, $options: "i" } }
+        dbQuery = { 
+            firstName: { $regex: `^${req.query["firstName"]}`, $options: "i" },
+            lastName: { $regex: `^${req.query["lastName"]}`, $options: "i" },
+            organization: process.env.ORGANIZATION //Queries first and last names only within the organization's instance
+        }
     } else if (req.query["searchBy"] === 'number') {
         dbQuery = {
             "phoneNumbers.primaryPhone": { $regex: `^${req.query["phoneNumbers.primaryPhone"]}`, $options: "i" },
