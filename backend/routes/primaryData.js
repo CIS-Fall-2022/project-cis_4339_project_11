@@ -96,4 +96,17 @@ router.put("/:id", (req, res, next) => {
     );
 });
 
+// //POSTMAN TEST: Get all entries (http://127.0.0.1:3000/primarydata/test/<organizationID>)
+// router.get("/test/:orgid", (req, res, next) => { 
+//     primarydata.find( {organization: req.params.orgid}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
+//         (error, data) => {
+//             if (error) {
+//                 return next(error);
+//             } else {
+//                 res.json(data);
+//             }
+//         }
+//     ).sort({ 'updatedAt': -1 }).limit(10);
+// });
+
 module.exports = router;
