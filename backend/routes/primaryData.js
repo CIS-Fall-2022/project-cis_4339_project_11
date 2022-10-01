@@ -48,7 +48,7 @@ router.get("/search/", (req, res, next) => {
     } else if (req.query["searchBy"] === 'number') {
         dbQuery = {
             "phoneNumbers.primaryPhone": { $regex: `^${req.query["phoneNumbers.primaryPhone"]}`, $options: "i" },
-            organization: process.env.ORGANIZATION //Queries phone numbers only within the organization's instance
+            organization_id: process.env.ORGANIZATION //Queries phone numbers only within the organization's instance
         }
     };
     primarydata.find( 
