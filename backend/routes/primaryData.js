@@ -10,7 +10,7 @@ require("dotenv").config();
 
 //GET all entries
 router.get("/", (req, res, next) => { 
-    primarydata.find( {organization: process.env.ORGANIZATION}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
+    primarydata.find( {organization_id: process.env.ORGANIZATION}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
         (error, data) => {
             if (error) {
                 return next(error);
@@ -24,7 +24,7 @@ router.get("/", (req, res, next) => {
 //GET single entry by ID
 router.get("/id/:id", (req, res, next) => {
     primarydata.find( 
-        { _id: req.params.id, organization: process.env.ORGANIZATION}, //Added ORGANIZATION filter, because a client can sign up for different organizations
+        { _id: req.params.id, organization_id: process.env.ORGANIZATION}, //Added ORGANIZATION filter, because a client can sign up for different organizations
         (error, data) => {
             if (error) {
                 return next(error);
@@ -43,7 +43,7 @@ router.get("/search/", (req, res, next) => {
         dbQuery = { 
             firstName: { $regex: `^${req.query["firstName"]}`, $options: "i" },
             lastName: { $regex: `^${req.query["lastName"]}`, $options: "i" },
-            organization: process.env.ORGANIZATION //Queries first and last names only within the organization's instance
+            organization_id: process.env.ORGANIZATION //Queries first and last names only within the organization's instance
         }
     } else if (req.query["searchBy"] === 'number') {
         dbQuery = {
@@ -102,7 +102,7 @@ router.put("/:id", (req, res, next) => {
 
 // //POSTMAN TEST: Get all entries (http://127.0.0.1:3000/primarydata/test/<organizationID>)
 // router.get("/test/:orgid", (req, res, next) => { 
-//     primarydata.find( {organization: req.params.orgid}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
+//     primarydata.find( {organization_id: req.params.orgid}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
 //         (error, data) => {
 //             if (error) {
 //                 return next(error);

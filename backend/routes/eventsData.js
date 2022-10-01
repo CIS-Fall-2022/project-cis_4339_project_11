@@ -6,7 +6,7 @@ let { eventdata } = require("../models/models");
 
 //GET all entries
 router.get("/", (req, res, next) => { 
-    eventdata.find( {organization: process.env.ORGANIZATION}, //Filters events to show events created within current organization instance
+    eventdata.find( {organization_id: process.env.ORGANIZATION}, //Filters events to show events created within current organization instance
         (error, data) => {
             if (error) {
                 return next(error);
@@ -20,7 +20,7 @@ router.get("/", (req, res, next) => {
 //GET single entry by ID
 router.get("/id/:id", (req, res, next) => { 
     //Adding "organization" as a find() parameter, multiple organzations can host the same event. (Functionality not within scope of this project, but its good to still have)
-    eventdata.find({ _id: req.params.id, organization: process.env.ORGANIZATION }, (error, data) => { 
+    eventdata.find({ _id: req.params.id, organization_id: process.env.ORGANIZATION }, (error, data) => { 
         if (error) {
             return next(error)
         } else {
