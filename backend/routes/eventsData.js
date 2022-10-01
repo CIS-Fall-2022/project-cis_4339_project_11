@@ -83,7 +83,7 @@ router.post("/", (req, res, next) => {
 //PUT
 router.put("/:id", (req, res, next) => {
     eventdata.findOneAndUpdate(
-        { _id: req.params.id },
+        { _id: req.params.id, organization_id: process.env.ORGANIZATION },
         req.body,
         (error, data) => {
             if (error) {
