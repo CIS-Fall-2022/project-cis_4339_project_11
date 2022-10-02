@@ -100,15 +100,18 @@ router.put("/:id", (req, res, next) => {
     );
 });
 
+
+//DELETE request 
 router.delete("/:id", (req, res, next) => { 
     primarydata.findOneAndDelete( 
         { _id: req.params.id }, 
-        req.body,
         (error, data) => {
             if (error) {
                 return next(error);
             } else {
-                res.json(data);
+                eventdata.updateMany({}, {$pull : {attendees: req.params.id}}).exec() // https://stackoverflow.com/questions/33123977/updating-more-than-one-mongodb-document-in-nodejs-doesnt-seem-to-work
+                res.json(data);                                                       // above source used to troubleshoot issue where command was not pushing over successfully. .exec() was used as suggested
+                
             }
         }
     );
