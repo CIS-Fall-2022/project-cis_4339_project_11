@@ -139,4 +139,37 @@ router.delete("/:id", (req, res, next) => {
     );
 });
 
+router.get("/dash",(req,res,next)=>{
+    eventdata.aggregate([
+        {
+          '$match': {
+            'organization_id': process.env.ORGANIZATION
+          }
+        }, {
+          '$project': {
+            'eventName': 1, 
+            'date': 1, 
+            'attendees_count': {
+              '$size': '$attendees'
+            }
+          }
+        }, {
+          '$group': {
+            '_id': {
+              '$month': '$date'
+            }, 
+            'attendees_count': {
+              '$sum': '$attendees_count'
+            }
+          }
+        }
+      ],
+      (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+})
 module.exports = router;
