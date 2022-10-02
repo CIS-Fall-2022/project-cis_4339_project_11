@@ -100,17 +100,36 @@ router.put("/:id", (req, res, next) => {
     );
 });
 
-// //POSTMAN TEST: Get all entries (http://127.0.0.1:3000/primarydata/test/<organizationID>)
-// router.get("/test/:orgid", (req, res, next) => { 
-//     primarydata.find( {organization_id: req.params.orgid}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
-//         (error, data) => {
-//             if (error) {
-//                 return next(error);
-//             } else {
-//                 res.json(data);
-//             }
-//         }
-//     ).sort({ 'updatedAt': -1 }).limit(10);
-// });
+
+//DELETE request 
+router.delete("/:id", (req, res, next) => { 
+    primarydata.findOneAndDelete( 
+        { _id: req.params.id }, 
+        (error, data) => {
+            if (error) {
+                return next(error);
+            } else {
+                eventdata.updateMany({}, {$pull : {attendees: req.params.id}}).exec() // https://stackoverflow.com/questions/33123977/updating-more-than-one-mongodb-document-in-nodejs-doesnt-seem-to-work
+                res.json(data);                                                       // above source used to troubleshoot issue where command was not pushing over successfully. .exec() was used as suggested
+                
+            }
+        }
+    );
+});
+
+
+
+//POSTMAN TEST: Get all entries (http://127.0.0.1:3000/primarydata/test/<organizationID>)
+router.get("/test/:orgid", (req, res, next) => { 
+    primarydata.find( {organization_id: req.params.orgid}, //Filters to only show PrimaryData documents within the current instance. (https://www.mongodb.com/docs/manual/tutorial/query-documents/)
+        (error, data) => {
+            if (error) {
+                return next(error);
+            } else {
+                res.json(data);
+            }
+        }
+    ).sort({ 'updatedAt': -1 }).limit(10);
+});
 
 module.exports = router;
