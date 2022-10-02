@@ -1,6 +1,7 @@
 const uuid = require('uuid');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+var ObjectId = require('mongoose').Types.ObjectId; //https://stackoverflow.com/questions/8111846/how-to-set-objectid-as-a-data-type-in-mongoose
 
 require("dotenv").config();  //To load ORGANIZATION variable
 
@@ -101,7 +102,7 @@ let eventDataSchema = new Schema({
 });
 
 let organizationDataSchema = new Schema({ //Creates schema for data that will be used for the "organization" items in the primaryData and eventData collections
-    _id: { type: String, default: uuid.v1},
+    _id: { type: ObjectId, default: uuid.v1},
     organizationName: {
         type: String,
         require: true
