@@ -66,6 +66,59 @@ router.get("/client/:id", (req, res, next) => {
     );
 });
 
+//GET request for dashboard component
+router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount of attendees that signed of for an event each month
+    eventdata.aggregate([
+        {
+          '$match': {
+            'organization_id': process.env.ORGANIZATION
+          }
+        }, {
+          '$project': {
+            'eventName': 1, 
+            'date': 1, 
+            'attendees_count': {
+              '$size': '$attendees'  
+            }
+          }
+          //$project result: 
+          // {
+                // _id: "<organization_id>"
+                // eventName: "<event-name>"
+                // date : <event date>
+                // attendees_count : <length of attendees array>
+            //}
+        }, {
+          '$group': {
+            '_id': {
+              '$month': '$date'
+            }, 
+            'attendees_count': {
+              '$sum': '$attendees_count'
+            }
+          }
+        }
+        //RESULTING JSON:
+        // [
+        //     {
+        //         "_id": 10, //MONTH (1-12)
+        //         "attendees_count": 3  //Number of event attendees thats month
+        //     },
+        //     {
+        //         "_id": 11,
+        //         "attendees_count": 3
+        //     }
+        // ]
+      ],
+      (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+})
+
 //POST
 router.post("/", (req, res, next) => { 
     eventdata.create( 
@@ -139,37 +192,5 @@ router.delete("/:id", (req, res, next) => {
     );
 });
 
-router.get("/dash",(req,res,next)=>{
-    eventdata.aggregate([
-        {
-          '$match': {
-            'organization_id': process.env.ORGANIZATION
-          }
-        }, {
-          '$project': {
-            'eventName': 1, 
-            'date': 1, 
-            'attendees_count': {
-              '$size': '$attendees'
-            }
-          }
-        }, {
-          '$group': {
-            '_id': {
-              '$month': '$date'
-            }, 
-            'attendees_count': {
-              '$sum': '$attendees_count'
-            }
-          }
-        }
-      ],
-      (error, data) => {
-        if (error) {
-            return next(error);
-        } else {
-            res.json(data);
-        }
-    })
-})
+
 module.exports = router;
