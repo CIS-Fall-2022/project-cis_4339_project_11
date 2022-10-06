@@ -1,0 +1,1780 @@
+{
+	"info": {
+		"_postman_id": "8dca63c9-063f-4e56-a8fa-39ab21440555",
+		"name": "CIS 4339 Project_11",
+		"description": "Documentation for all API requests used within our project.\n\nTeam Members:\n\nFavour Oshiokhale\n\nTorrey Brett\n\nZachary Arroyo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19820806"
+	},
+	"item": [
+		{
+			"name": "Primary Data",
+			"item": [
+				{
+					"name": "ALL Primary Data for Organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/primarydata/test/<organization_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"primarydata",
+								"test",
+								"<organization_ID>"
+							]
+						},
+						"description": "Request that pulls all entries from the primary data collection with a matching organization ID. To use, replace `organization_ID` with the ID of the organization in question.\n\nThis was mainly used to test the connection between Postman, the API, and our MongoDB."
+					},
+					"response": [
+						{
+							"name": "GET All HISD Mentor Programs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/test/6334777ccf20211ac2ba4dd0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										"test",
+										"6334777ccf20211ac2ba4dd0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2423"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"977-F2J0a/tVqggsT19KvoFprsfQr1Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 00:47:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77082\"\n        },\n        \"_id\": \"9e4b2990-400a-11ed-b0c3-111ab6371ae9\",\n        \"firstName\": \"Liam\",\n        \"middleName\": \"\",\n        \"lastName\": \"Watson\",\n        \"email\": \"\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"3621776046\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T15:23:06.794Z\",\n        \"updatedAt\": \"2022-09-29T15:23:15.488Z\",\n        \"__v\": 0,\n        \"organization_id\": \"6334777ccf20211ac2ba4dd0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Bellaire\",\n            \"county\": \"Harris\",\n            \"zip\": \"77401\"\n        },\n        \"_id\": \"5ba230c0-400a-11ed-b0c3-111ab6371ae9\",\n        \"firstName\": \"Frank\",\n        \"middleName\": \"\",\n        \"lastName\": \"Newman\",\n        \"email\": \"\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"6287566808\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T15:21:14.956Z\",\n        \"updatedAt\": \"2022-09-29T15:21:38.883Z\",\n        \"__v\": 0,\n        \"organization_id\": \"6334777ccf20211ac2ba4dd0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Bellaire\",\n            \"county\": \"Harris\",\n            \"zip\": \"77401\"\n        },\n        \"_id\": \"ffe72300-4007-11ed-b0c3-111ab6371ae9\",\n        \"firstName\": \"Heather\",\n        \"middleName\": \"\",\n        \"lastName\": \"Clarkson\",\n        \"email\": \"\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"3855664785\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T15:04:22.065Z\",\n        \"updatedAt\": \"2022-09-29T15:21:22.865Z\",\n        \"__v\": 0,\n        \"organization_id\": \"6334777ccf20211ac2ba4dd0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77082\"\n        },\n        \"_id\": \"5d783b30-4008-11ed-b0c3-111ab6371ae9\",\n        \"firstName\": \"Gretchen\",\n        \"middleName\": \"\",\n        \"lastName\": \"Turner\",\n        \"email\": \"\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"7718115313\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T15:06:59.044Z\",\n        \"updatedAt\": \"2022-09-29T15:07:11.886Z\",\n        \"__v\": 0,\n        \"organization_id\": \"6334777ccf20211ac2ba4dd0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77082\"\n        },\n        \"_id\": \"970688d0-4007-11ed-b0c3-111ab6371ae9\",\n        \"firstName\": \"Richard\",\n        \"middleName\": \"\",\n        \"lastName\": \"Edwards\",\n        \"email\": \"redwards@email.com\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"7729414263\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T15:01:26.112Z\",\n        \"updatedAt\": \"2022-09-29T15:01:39.562Z\",\n        \"__v\": 0,\n        \"organization_id\": \"6334777ccf20211ac2ba4dd0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Bellaire\",\n            \"county\": \"Harris\",\n            \"zip\": \"77401\"\n        },\n        \"_id\": \"b5ae16a0-4006-11ed-992a-71df5976c5b4\",\n        \"firstName\": \"Doug\",\n        \"middleName\": \"\",\n        \"lastName\": \"Dimmadome\",\n        \"email\": \"bdimmadome@email.com\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"6088012105\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T14:55:08.043Z\",\n        \"updatedAt\": \"2022-09-29T15:00:06.054Z\",\n        \"__v\": 0,\n        \"organization_id\": \"6334777ccf20211ac2ba4dd0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Primary Data by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/primarydata/id/<primary_id>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"primarydata",
+								"id",
+								"<primary_id>"
+							]
+						},
+						"description": "A simple request that pulls the related primary data entry based on the ID input. Shows all relevant information input during the initial data entry process, along with the automated organization ID input.\n\nTo use, replace `primary_ID` with the ID of the primary data entry."
+					},
+					"response": [
+						{
+							"name": "GET Primary Data by ID Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/id/97c23390-3f4a-11ed-b457-dfbc754ec8be",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										"id",
+										"97c23390-3f4a-11ed-b457-dfbc754ec8be"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "425"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a9-iu2KCkxuMRw/2OuAiUcrNvofCXk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 14:46:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"123 Round St.\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77082\"\n        },\n        \"_id\": \"97c23390-3f4a-11ed-b457-dfbc754ec8be\",\n        \"firstName\": \"Johnny\",\n        \"middleName\": \"\",\n        \"lastName\": \"Smith\",\n        \"email\": \"jsmith@email.com\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"2811231234\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-28T16:28:32.459Z\",\n        \"updatedAt\": \"2022-09-28T16:28:32.459Z\",\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Primary Data by Search Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/primarydata/search/?searchBy=<query>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"primarydata",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "searchBy",
+									"value": "<query>"
+								}
+							]
+						},
+						"description": "Pulls **all** records that match the search query specified. Only shows queries that have a matching organization ID. Can search by either name or phone number.\n\nTo use, replace `query` with either `name` or `number`.\n\nIf using `name`, add in the name to search by including `&firstName=&lastName=`, replacing `first` and `last` accordingly.\n\nIf using `number`, add in the phone number to search by including `&phoneNumbers.primaryPhone`, replacing `phone` with the entirety or section of the phone number to search by.\n\nWill give all results that match the search criteria, even if an exact match isn't made in the query parameters."
+					},
+					"response": [
+						{
+							"name": "GET Primary Data by Name Query",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/search/?searchBy=name&firstName=&lastName=Smith",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "<query>",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "searchBy",
+											"value": "name"
+										},
+										{
+											"key": "firstName",
+											"value": ""
+										},
+										{
+											"key": "lastName",
+											"value": "Smith"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "807"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"327-IkPG+UaqVrMwDNN4CCj/syj4h4M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 14:56:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"123 Round St.\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77082\"\n        },\n        \"_id\": \"97c23390-3f4a-11ed-b457-dfbc754ec8be\",\n        \"firstName\": \"Johnny\",\n        \"middleName\": \"\",\n        \"lastName\": \"Smith\",\n        \"email\": \"jsmith@email.com\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"2811231234\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-28T16:28:32.459Z\",\n        \"updatedAt\": \"2022-09-28T16:28:32.459Z\",\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Spring\",\n            \"county\": \"\",\n            \"zip\": \"\"\n        },\n        \"_id\": \"5c5f2f70-401b-11ed-96ed-b5ba35dd398c\",\n        \"firstName\": \"James\",\n        \"middleName\": \"\",\n        \"lastName\": \"Smith\",\n        \"email\": \"\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"2345550000\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-29T17:22:57.647Z\",\n        \"updatedAt\": \"2022-09-29T17:22:57.647Z\",\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						},
+						{
+							"name": "GET Primary Data by Phone Query",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/search/?searchBy=number&phoneNumbers.primaryPhone=832",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "searchBy",
+											"value": "number"
+										},
+										{
+											"key": "phoneNumbers.primaryPhone",
+											"value": "832"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "809"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"329-r+4EnQ90IX3sHvLRXblAlb8PQlk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:03:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77082\"\n        },\n        \"_id\": \"923f74d0-3f4c-11ed-a199-ff9ef83ee7ee\",\n        \"firstName\": \"Rick\",\n        \"middleName\": \"\",\n        \"lastName\": \"Jameson\",\n        \"email\": \"rjameson@email.com\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"8321111111\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-28T16:42:42.208Z\",\n        \"updatedAt\": \"2022-09-28T16:58:19.758Z\",\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77091\"\n        },\n        \"_id\": \"a4989c50-3f4d-11ed-a199-ff9ef83ee7ee\",\n        \"firstName\": \"Tiffany\",\n        \"middleName\": \"\",\n        \"lastName\": \"Luis\",\n        \"email\": \"\",\n        \"phoneNumbers\": [\n            {\n                \"primaryPhone\": \"8322223333\",\n                \"secondaryPhone\": \"\"\n            }\n        ],\n        \"createdAt\": \"2022-09-28T16:50:22.486Z\",\n        \"updatedAt\": \"2022-09-28T16:50:22.486Z\",\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Primary Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"<first name>\",\r\n    \"middleName\": \"<middle name>\",\r\n    \"lastName\": \"<last name>\",\r\n    \"email\": \"<email>\",\r\n    \"address.line1\": \"<address line 1>\",\r\n    \"address.line2\": \"<address line 2>\",\r\n    \"address.county\": \"<county>\",\r\n    \"address.zip\": \"<zip>\",\r\n    \"address.city\": \"<city>\",\r\n    \"phoneNumbers.0.primaryPhone\": <phone number>,\r\n    \"phoneNumbers.0.secondaryPhone\": <phone number>\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/primarydata/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"primarydata",
+								""
+							]
+						},
+						"description": "Posts a primary data entry to the database. All fields included in the body below are acceptable as inputs, however the only fields that are **required** are `firstName`, `lastName`, `phoneNumbers.0.primaryphone`, and `address.city`."
+					},
+					"response": [
+						{
+							"name": "POST Primary Data Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Test First\",\r\n    \"lastName\": \"Test Last\",\r\n    \"address.city\": \"Test City\",\r\n    \"phoneNumbers.0.primaryPhone\": 1231231234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12d-nhGdl+PcBJYOEAqf5ewj2Pr/OyQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 01:01:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Test First\",\n    \"lastName\": \"Test Last\",\n    \"phoneNumbers\": [\n        {\n            \"primaryPhone\": 1231231234\n        }\n    ],\n    \"address\": {\n        \"city\": \"Test City\"\n    },\n    \"organization_id\": \"63347428cf20211ac2ba4db0\",\n    \"_id\": \"bef475e0-41ed-11ed-9de7-75d24a622a8d\",\n    \"createdAt\": \"2022-10-02T01:01:28.510Z\",\n    \"updatedAt\": \"2022-10-02T01:01:28.510Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Primary Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"<first name>\",\r\n    \"middleName\": \"<middle name>\",\r\n    \"lastName\": \"<last name>\",\r\n    \"email\": \"<email>\",\r\n    \"address.line1\": \"<address line 1>\",\r\n    \"address.line2\": \"<address line 2>\",\r\n    \"address.county\": \"<county>\",\r\n    \"address.zip\": \"<zip>\",\r\n    \"address.city\": \"<city>\",\r\n    \"phoneNumbers.0.primaryPhone\": <phone number>,\r\n    \"phoneNumbers.0.secondaryPhone\": <phone number>\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/primarydata/<primary_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"primarydata",
+								"<primary_ID>"
+							]
+						},
+						"description": "Updates a record based on the ID in the parameters and the body of the request.\n\nTo use, replace `primary_id` with the ID of the primary data entry and use any of the potential editable fields from the previously seen POST body to update those fields. Any field not included will be ignored and untouched- only the specified fields will be updated.\n\nDo **not** include ID in the body of the request. Only include the ID of the primary data entry in the parameters.\n\nUpon a successful request, the API will return the full record of the specified primary data **before** the update was complete in Postman. This is to verify that the targeted primary data was correct."
+					},
+					"response": [
+						{
+							"name": "PUT Primary Data Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Test First Updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/3f692d00-41ef-11ed-a896-7fbbd266b9fe",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										"3f692d00-41ef-11ed-a896-7fbbd266b9fe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12d-M/TMzkH41/prKEDYBDd83RIAiUE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 01:14:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": {\n        \"city\": \"Test City\"\n    },\n    \"_id\": \"3f692d00-41ef-11ed-a896-7fbbd266b9fe\",\n    \"firstName\": \"Test First\",\n    \"lastName\": \"Test Last\",\n    \"phoneNumbers\": [\n        {\n            \"primaryPhone\": 1231231234\n        }\n    ],\n    \"organization_id\": \"63347428cf20211ac2ba4db0\",\n    \"createdAt\": \"2022-10-02T01:12:13.520Z\",\n    \"updatedAt\": \"2022-10-02T01:13:48.482Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Primary Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/primarydata/<primary_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"primarydata",
+								"<primary_ID>"
+							]
+						},
+						"description": "Deletes a primary data entirely along with its record in any event that the entry was a part of. The event record deletion process is automated by the API- all that's requires is to run the delete request and everything else is handled accordingly.\n\nReplace `primary_ID` with the ID you wish to delete. The API will return the entire record of the primary data before deletion to confirm what was actually deleted."
+					},
+					"response": [
+						{
+							"name": "DELETE Primary Data Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/primarydata/0e83a0d0-41ef-11ed-a896-7fbbd266b9fe",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"primarydata",
+										"0e83a0d0-41ef-11ed-a896-7fbbd266b9fe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12d-CDJsWvMPvgNoaeI0vLt3H0Zwdlk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 01:11:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": {\n        \"city\": \"Test City\"\n    },\n    \"_id\": \"0e83a0d0-41ef-11ed-a896-7fbbd266b9fe\",\n    \"firstName\": \"Test First\",\n    \"lastName\": \"Test Last\",\n    \"phoneNumbers\": [\n        {\n            \"primaryPhone\": 1231231234\n        }\n    ],\n    \"organization_id\": \"63347428cf20211ac2ba4db0\",\n    \"createdAt\": \"2022-10-02T01:10:51.488Z\",\n    \"updatedAt\": \"2022-10-02T01:10:51.488Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			],
+			"description": "Below are all related API requests for Primary Data entries."
+		},
+		{
+			"name": "Event Data",
+			"item": [
+				{
+					"name": "ALL Event Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData"
+							]
+						},
+						"description": "Returns all event data entries within the current organization. No parameters need to be passed, the organization ID is automatically passed through to only show relevant events for the organization."
+					},
+					"response": [
+						{
+							"name": "GET ALL Event Data Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/eventData",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"eventData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "903"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"387-zqPcJ5EXxctOxYTaOyt4GkKNUaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:34:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"123 Lily Ln.\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77004\"\n        },\n        \"_id\": \"43404a50-3f4a-11ed-b457-dfbc754ec8be\",\n        \"eventName\": \"Celebrity Basketball Game\",\n        \"services\": [\n            \"Youth Services Program\"\n        ],\n        \"date\": \"2022-10-16T00:00:00.000Z\",\n        \"description\": \"\",\n        \"attendees\": [\n            \"97c23390-3f4a-11ed-b457-dfbc754ec8be\",\n            \"a4989c50-3f4d-11ed-a199-ff9ef83ee7ee\",\n            \"923f74d0-3f4c-11ed-a199-ff9ef83ee7ee\"\n        ],\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"339 Portwood St.\",\n            \"line2\": \"\",\n            \"city\": \"Spring\",\n            \"county\": \"Harris\",\n            \"zip\": \"77373\"\n        },\n        \"_id\": \"2a64ce60-3f4b-11ed-b457-dfbc754ec8be\",\n        \"eventName\": \"Spring Branch Art Sale\",\n        \"services\": [\n            \"Family Support\"\n        ],\n        \"date\": \"2022-10-29T00:00:00.000Z\",\n        \"description\": \"\",\n        \"attendees\": [\n            \"7dccb4c0-3f4e-11ed-a199-ff9ef83ee7ee\",\n            \"35b867b0-3f4e-11ed-a199-ff9ef83ee7ee\",\n            \"587b7130-3f4d-11ed-a199-ff9ef83ee7ee\"\n        ],\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Event Data by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/id/<event_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"id",
+								"<event_ID>"
+							]
+						},
+						"description": "StartFragment\n\nA simple request that pulls the related event data entry based on the ID input. Shows all relevant information input during the initial data entry process, along with the automated organization ID input.\n\nTo use, replace `event_ID` with the ID of the event data entry.\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "GET Event Data by ID Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/id/2a64ce60-3f4b-11ed-b457-dfbc754ec8be",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"id",
+										"2a64ce60-3f4b-11ed-b457-dfbc754ec8be"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "448"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c0-VGuYzt4uEJ+QLNQ2sKpgLpCN+lM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:46:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"339 Portwood St.\",\n            \"line2\": \"\",\n            \"city\": \"Spring\",\n            \"county\": \"Harris\",\n            \"zip\": \"77373\"\n        },\n        \"_id\": \"2a64ce60-3f4b-11ed-b457-dfbc754ec8be\",\n        \"eventName\": \"Spring Branch Art Sale\",\n        \"services\": [\n            \"Family Support\"\n        ],\n        \"date\": \"2022-10-29T00:00:00.000Z\",\n        \"description\": \"\",\n        \"attendees\": [\n            \"7dccb4c0-3f4e-11ed-a199-ff9ef83ee7ee\",\n            \"35b867b0-3f4e-11ed-a199-ff9ef83ee7ee\",\n            \"587b7130-3f4d-11ed-a199-ff9ef83ee7ee\"\n        ],\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Event Data for One Client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/client/<client_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"client",
+								"<client_ID>"
+							]
+						},
+						"description": "Returns all events that the specified client is marked to be attending within the database. Replace `client_ID` with the client's ID."
+					},
+					"response": [
+						{
+							"name": "GET Event Data for One Client Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/client/a4989c50-3f4d-11ed-a199-ff9ef83ee7ee",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"client",
+										"a4989c50-3f4d-11ed-a199-ff9ef83ee7ee"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "456"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c8-TkP7om3+N7gCcEDgZ7gpD/O2sM4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:20:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"123 Lily Ln.\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77004\"\n        },\n        \"_id\": \"43404a50-3f4a-11ed-b457-dfbc754ec8be\",\n        \"eventName\": \"Celebrity Basketball Game\",\n        \"services\": [\n            \"Youth Services Program\"\n        ],\n        \"date\": \"2022-10-16T00:00:00.000Z\",\n        \"description\": \"\",\n        \"attendees\": [\n            \"97c23390-3f4a-11ed-b457-dfbc754ec8be\",\n            \"a4989c50-3f4d-11ed-a199-ff9ef83ee7ee\",\n            \"923f74d0-3f4c-11ed-a199-ff9ef83ee7ee\"\n        ],\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Event Data by Search Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/search/?searchBy=<query>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "searchBy",
+									"value": "<query>"
+								}
+							]
+						},
+						"description": "Pulls **all** records that match the search query specified. Only shows queries that have a matching organization ID. Can search by either name or phone number.\n\nTo use, replace `query` with either `name` or `date`.\n\nIf using `name`, add in the name to search by including `&eventName=NAME`, replacing `NAME` accordingly.\n\nIf using `date`, add in the date to search by including `&eventDate=YYYY-MM-DD`, replacing `YYYY-MM-DD` with the respective date to search by, following that same date format.\n\nWill give all results that match the search criteria, even if an exact match isn't made in the query parameters."
+					},
+					"response": [
+						{
+							"name": "GET Event Data by Name Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/search/?searchBy=name&eventName=celebrity",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "searchBy",
+											"value": "name"
+										},
+										{
+											"key": "eventName",
+											"value": "celebrity"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "456"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c8-TkP7om3+N7gCcEDgZ7gpD/O2sM4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:38:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"123 Lily Ln.\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77004\"\n        },\n        \"_id\": \"43404a50-3f4a-11ed-b457-dfbc754ec8be\",\n        \"eventName\": \"Celebrity Basketball Game\",\n        \"services\": [\n            \"Youth Services Program\"\n        ],\n        \"date\": \"2022-10-16T00:00:00.000Z\",\n        \"description\": \"\",\n        \"attendees\": [\n            \"97c23390-3f4a-11ed-b457-dfbc754ec8be\",\n            \"a4989c50-3f4d-11ed-a199-ff9ef83ee7ee\",\n            \"923f74d0-3f4c-11ed-a199-ff9ef83ee7ee\"\n        ],\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						},
+						{
+							"name": "GET Event Data by Date Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/search/?searchBy=date&eventDate=2022-10-29",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "searchBy",
+											"value": "date"
+										},
+										{
+											"key": "eventDate",
+											"value": "2022-10-29"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "448"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c0-VGuYzt4uEJ+QLNQ2sKpgLpCN+lM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:42:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"address\": {\n            \"line1\": \"339 Portwood St.\",\n            \"line2\": \"\",\n            \"city\": \"Spring\",\n            \"county\": \"Harris\",\n            \"zip\": \"77373\"\n        },\n        \"_id\": \"2a64ce60-3f4b-11ed-b457-dfbc754ec8be\",\n        \"eventName\": \"Spring Branch Art Sale\",\n        \"services\": [\n            \"Family Support\"\n        ],\n        \"date\": \"2022-10-29T00:00:00.000Z\",\n        \"description\": \"\",\n        \"attendees\": [\n            \"7dccb4c0-3f4e-11ed-a199-ff9ef83ee7ee\",\n            \"35b867b0-3f4e-11ed-a199-ff9ef83ee7ee\",\n            \"587b7130-3f4d-11ed-a199-ff9ef83ee7ee\"\n        ],\n        \"__v\": 0,\n        \"organization_id\": \"63347428cf20211ac2ba4db0\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Dashboard Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventData/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"dashboard"
+							]
+						},
+						"description": "Get request that pulls the amount of attendees that are signed to attend events each month. The response from the API gives the month in question along with the amount of attendees for events in that month.\n\n`_id` refers to the month of the events in question. For example, an `_id` response of `10` would be October. `attendees_count` returns the exact number of attendees that are marked to be attending events within that month."
+					},
+					"response": [
+						{
+							"name": "Dashboard Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/eventData/dashboard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"eventData",
+										"dashboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3f-rOfGUEuk5T56U9KBMi8LbHIlo8Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 19:21:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": 10,\n        \"attendees_count\": 3\n    },\n    {\n        \"_id\": 11,\n        \"attendees_count\": 3\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Event Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventName\": \"<name>\",\r\n    \"services\": \"<services>\",\r\n    \"date\": \"<date>\",\r\n    \"address.line1\": \"<address line 1>\",\r\n    \"address.line2\": \"<address line 2>\",\r\n    \"address.county\": \"<county>\",\r\n    \"address.zip\": \"<zip>\",\r\n    \"address.city\": \"<city>\",\r\n    \"description\": \"<description>\",\r\n    \"attendees\": \"<attendees>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								""
+							]
+						},
+						"description": "Posts a event data entry to the database. All fields included in the body below are acceptable as inputs, however the only fields that are **required** are `eventName` and `date`."
+					},
+					"response": [
+						{
+							"name": "POST Event Data Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"eventName\": \"Test Event\",\r\n    \"services\": \"Family Support\",\r\n    \"date\": \"2022-10-19\",\r\n    \"address.line1\": \"Test Address\",\r\n    \"description\": \"This is a test\",\r\n    \"attendees\": \"5c5f2f70-401b-11ed-96ed-b5ba35dd398c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "307"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"133-jlvMcEAr1eoMOz1rQSwJGjyDiWk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:52:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"eventName\": \"Test Event\",\n    \"services\": [\n        \"Family Support\"\n    ],\n    \"date\": \"2022-10-19T00:00:00.000Z\",\n    \"address\": {\n        \"line1\": \"Test Address\"\n    },\n    \"description\": \"This is a test\",\n    \"attendees\": [\n        \"5c5f2f70-401b-11ed-96ed-b5ba35dd398c\"\n    ],\n    \"organization_id\": \"63347428cf20211ac2ba4db0\",\n    \"_id\": \"29bcd080-426a-11ed-825b-c1354ef4fab3\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Data Example",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventName\": \"<name>\",\r\n    \"services\": \"<services>\",\r\n    \"date\": \"<date>\",\r\n    \"address.line1\": \"<address line 1>\",\r\n    \"address.line2\": \"<address line 2>\",\r\n    \"address.county\": \"<county>\",\r\n    \"address.zip\": \"<zip>\",\r\n    \"address.city\": \"<city>\",\r\n    \"description\": \"<description>\",\r\n    \"attendees\": \"<attendees>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/<event_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"<event_ID>"
+							]
+						},
+						"description": "Updates a record based on the ID in the parameters and the body of the request.\n\nTo use, replace `event_id` with the ID of the event data entry and use any of the potential editable fields from the previously seen POST body to update those fields. Any field not included will be ignored and untouched- only the specified fields will be updated.\n\nDo **not** include ID in the body of the request. Only include the ID of the event data entry in the parameters.\n\nUpon a successful request, the API will return the full record of the specified event data **before** the update was complete in Postman. This is to verify that the targeted event data was correct."
+					},
+					"response": [
+						{
+							"name": "PUT Event Data Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"eventName\": \"A Better Test Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/29bcd080-426a-11ed-825b-c1354ef4fab3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"29bcd080-426a-11ed-825b-c1354ef4fab3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "307"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"133-fP4bw5LnMoT+eb2RkTkEzAxzIck\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:54:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": {\n        \"line1\": \"Test Address\"\n    },\n    \"_id\": \"29bcd080-426a-11ed-825b-c1354ef4fab3\",\n    \"eventName\": \"Test Event\",\n    \"services\": [\n        \"Family Support\"\n    ],\n    \"date\": \"2022-10-19T00:00:00.000Z\",\n    \"description\": \"This is a test\",\n    \"attendees\": [\n        \"5c5f2f70-401b-11ed-96ed-b5ba35dd398c\"\n    ],\n    \"organization_id\": \"63347428cf20211ac2ba4db0\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Data Attendee Addition",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attendee\": \"<client_ID>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/addAttendee/<event_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"addAttendee",
+								"<event_ID>"
+							]
+						},
+						"description": "Updates a record based on the ID in the parameters and the body of the request by inserting a new attendee.\n\nTo use, replace `event_id` with the ID of the event data entry and replace `client_ID` with the ID of the attendee to add.\n\nDo **not** include the event ID in the body of the request. Only include the ID of the event data entry in the parameters.\n\nUpon a successful request, the API will return an acknowledgement confirming the addition."
+					},
+					"response": [
+						{
+							"name": "PUT Event Data Attendee Addition Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attendee\": \"923f74d0-3f4c-11ed-a199-ff9ef83ee7ee\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/addAttendee/29bcd080-426a-11ed-825b-c1354ef4fab3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"addAttendee",
+										"29bcd080-426a-11ed-825b-c1354ef4fab3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-XE4LqSKK8lMBgnDPfq7vp2yCSG8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 15:57:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"acknowledged\": true,\n    \"modifiedCount\": 1,\n    \"upsertedId\": null,\n    \"upsertedCount\": 0,\n    \"matchedCount\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Data Attendee Removal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attendee\": \"<client_ID>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/addAttendee/<event_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"addAttendee",
+								"<event_ID>"
+							]
+						},
+						"description": "Updates a record based on the ID in the parameters and the body of the request by removing an existing attendee.\n\nTo use, replace `event_id` with the ID of the event data entry and replace `client_ID` with the ID of the attendee to remove.\n\nDo **not** include the event ID in the body of the request. Only include the ID of the event data entry in the parameters.\n\nUpon a successful request, the API will return an acknowledgement confirming the removal."
+					},
+					"response": [
+						{
+							"name": "PUT Event Data Attendee Removal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attendee\": \"9e4b2990-400a-11ed-b0c3-111ab6371ae9\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/removeAttendee/c49cadd0-4005-11ed-992a-71df5976c5b4",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"removeAttendee",
+										"c49cadd0-4005-11ed-992a-71df5976c5b4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-XE4LqSKK8lMBgnDPfq7vp2yCSG8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Oct 2022 04:49:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"acknowledged\": true,\n    \"modifiedCount\": 1,\n    \"upsertedId\": null,\n    \"upsertedCount\": 0,\n    \"matchedCount\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/eventdata/<event_ID>",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata",
+								"<event_ID>"
+							]
+						},
+						"description": "Deletes an event data entirely. Since attendees are assigned within the event data document instead of on the primary data document, attendees do not need to be unassigned by any other process. Simply deleting the event data will inherently unassign the client from that event.\n\nReplace `event_ID` with the ID you wish to delete. The API will return the entire record of the event data before deletion to confirm what was actually deleted."
+					},
+					"response": [
+						{
+							"name": "DEL Event Data Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/eventdata/8a0d4120-41f9-11ed-8f17-c70482a30ab8",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"eventdata",
+										"8a0d4120-41f9-11ed-8f17-c70482a30ab8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"107-rPZ7oDjZbxGm9k70RrFgzHbsz08\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 02:26:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": {\n        \"line1\": \"\",\n        \"line2\": \"\",\n        \"city\": \"\",\n        \"county\": \"\",\n        \"zip\": \"\"\n    },\n    \"_id\": \"8a0d4120-41f9-11ed-8f17-c70482a30ab8\",\n    \"eventName\": \"test\",\n    \"services\": [],\n    \"date\": \"2022-09-26T00:00:00.000Z\",\n    \"description\": \"\",\n    \"attendees\": [],\n    \"organization_id\": \"63347428cf20211ac2ba4db0\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			],
+			"description": "All requests related to the Event Data backend API."
+		},
+		{
+			"name": "Organization Data",
+			"item": [
+				{
+					"name": "Organization (For frontend)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/organizationData/<organization-id>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"organizationData",
+								"<organization-id>"
+							]
+						},
+						"description": "Pulls information about the organization data for use on the frontend. Since the only thing stored by the organization is their name and ID, it will only return those two fields.\n\nReplace `organization-ID` with the organization's ID."
+					},
+					"response": [
+						{
+							"name": "Organization Data Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/organizationData/<organization-id>",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"organizationData",
+										"<organization-id>"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-9SsXCGkXXnMyoigebpiocXstkBU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Oct 2022 19:04:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6334777ccf20211ac2ba4dd0\",\n    \"organizationName\": \"HISD Mentor Program\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Requests for information from the organization as a whole."
+		}
+	]
+}
