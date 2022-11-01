@@ -363,6 +363,7 @@ export default {
                 <tr>
                   <th class="p-4 text-left">Event Name</th>
                   <th class="p-4 text-left">Date</th>
+                  <th class="p-4 text-left"></th>                  
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-300">
@@ -372,7 +373,7 @@ export default {
                   <td><button
                         type="submit"
                         class="bg-red-700 text-white rounded"
-                        @click="deleteEventFromClient(event.eventID)">Delete</button></td>
+                        @click="deleteEventFromClient(event.eventID)">Remove</button></td>
                 </tr>
               </tbody>
             </table>
