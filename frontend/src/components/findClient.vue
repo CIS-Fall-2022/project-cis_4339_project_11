@@ -89,7 +89,7 @@
               <td class="p-2 text-left">{{ client.firstName + " " + client.lastName }}</td>
               <td class="p-2 text-left">{{ client.phoneNumbers[0].primaryPhone }}</td>
               <td class="p-2 text-left">{{ client.address.city }}</td>
-              <td><button
+              <td @click.stop><button
                         type="submit"
                         class="bg-red-700 text-white rounded"
                         @click="deleteClient(client._id)">Delete</button></td>

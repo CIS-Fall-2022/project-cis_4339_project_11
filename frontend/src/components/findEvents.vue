@@ -69,6 +69,7 @@
               <th class="p-4 text-left">Event Name</th>
               <th class="p-4 text-left">Event Date</th>
               <th class="p-4 text-left">Event Address</th>
+              <th class="p-4 text-left"></th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-300">
@@ -76,6 +77,10 @@
               <td class="p-2 text-left">{{ event.eventName }}</td>
               <td class="p-2 text-left">{{ formattedDate(event.date) }}</td>
               <td class="p-2 text-left">{{ event.address.line1 }}</td>
+              <td @click.stop><button
+                        type="submit"
+                        class="bg-red-700 text-white rounded"
+                        @click="deleteEvent(event._id)">Delete</button></td>
             </tr>
           </tbody>
         </table>
@@ -123,6 +128,15 @@ export default {
       axios.get(apiURL).then((resp) => {
         this.queryData = resp.data;
       });
+    },
+    deleteEvent(eventid) {
+      if(confirm("Are you sure you want to permanently delete this event? This cannot be undone.")){
+        let apiURL =
+          import.meta.env.VITE_ROOT_API + `/eventdata/` + eventid;
+        axios.delete(apiURL).then(() => {
+          window.location.reload();
+        });
+      }
     },
     clearSearch() {
       //Resets all the variables
