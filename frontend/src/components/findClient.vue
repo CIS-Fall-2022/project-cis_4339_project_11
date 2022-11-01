@@ -89,6 +89,7 @@
               <td class="p-2 text-left">{{ client.firstName + " " + client.lastName }}</td>
               <td class="p-2 text-left">{{ client.phoneNumbers[0].primaryPhone }}</td>
               <td class="p-2 text-left">{{ client.address.city }}</td>
+              <!-- https://stackoverflow.com/a/68838535 used to find a way to not open the edit page when clicking delete button-->
               <td @click.stop><button
                         type="submit"
                         class="bg-red-700 text-white rounded"

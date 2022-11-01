@@ -234,6 +234,7 @@
                   >{{ client.attendeeFirstName + " " + client.attendeeLastName }}</td>
                   <td class="p-2 text-left">{{ client.attendeeCity }}</td>
                   <td class="p-2 text-left">{{ client.attendeePhoneNumber }}</td>
+                  <!-- https://stackoverflow.com/a/68838535 used to find a way to not open the edit page when clicking delete button-->
                   <td @click.stop><button
                         type="submit"
                         class="bg-red-700 text-white rounded"

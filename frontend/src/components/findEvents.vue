@@ -77,7 +77,8 @@
               <td class="p-2 text-left">{{ event.eventName }}</td>
               <td class="p-2 text-left">{{ formattedDate(event.date) }}</td>
               <td class="p-2 text-left">{{ event.address.line1 }}</td>
-              <td @click.stop><button
+              <!-- https://stackoverflow.com/a/68838535 used to find a way to not open the edit page when clicking delete button-->
+              <td @click.stop><button    
                         type="submit"
                         class="bg-red-700 text-white rounded"
                         @click="deleteEvent(event._id)">Delete</button></td>
