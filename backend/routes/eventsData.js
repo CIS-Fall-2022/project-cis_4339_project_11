@@ -68,6 +68,7 @@ router.get("/client/:id", (req, res, next) => {
 
 //GET request for dashboard component
 router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount of attendees that signed of for an event each month
+    const today = new Date()
     eventdata.aggregate([
         {
           '$match': {
@@ -97,16 +98,26 @@ router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount 
               '$sum': '$attendees_count'
             }
           }
+        },
+        {
+            '$project':{
+                '_id': 0,
+                'month': '$_id',
+                'attendees': '$attendees_count'
+            }
+        },
+        {
+            '$sort': {'_id': -1}
         }
         //RESULTING JSON:
         // [
         //     {
-        //         "_id": 10, //MONTH (1-12)
+        //         "month": 10, //MONTH (1-12)
         //         "attendees_count": 3  //Number of event attendees thats month
         //     },
         //     {
-        //         "_id": 11,
-        //         "attendees_count": 3
+        //         "month": 11,
+        //         "attendees": 3
         //     }
         // ]
       ],
