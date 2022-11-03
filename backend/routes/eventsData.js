@@ -108,7 +108,7 @@ router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount 
         },
         {
             '$sort': {'_id': -1}
-        }
+        },
         //RESULTING JSON:
         // [
         //     {
