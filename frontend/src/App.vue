@@ -48,7 +48,7 @@
           background: linear-gradient(250deg, #C8102E 70%, #efecec 50.6%);
         "
       >
-        <h1 class="mr-20 text-3xl text-white">Dataplatform</h1>
+        <h1 class="mr-20 text-3xl text-white">{{organization}}</h1>
       </section>
       <div>
         <router-view></router-view>
@@ -58,9 +58,31 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "App",
-};
+  data(){
+    return{
+      organization:'test',
+    };
+  },
+  methods: {
+    async handleOrganizationName(){
+      let apiURL = import.meta.env.VITE_ROOT_API + `/organizationData/`;
+      //let apiURL = `http://localhost:3000/organizationData/`
+      let response = await axios.get(apiURL)
+      console.log(response)
+      this.organization = response.data.organizationName
+    }
+
+   },
+   async mounted(){
+    await this.handleOrganizationName()
+
+   },
+  }
+;
 </script>
 
 <style>
