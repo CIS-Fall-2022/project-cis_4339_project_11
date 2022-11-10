@@ -70,7 +70,6 @@ export default {
   methods: {
     async handleOrganizationName(){
       let apiURL = import.meta.env.VITE_ROOT_API + `/organizationData/`;
-      //let apiURL = `http://localhost:3000/organizationData/`
       let response = await axios.get(apiURL)
       console.log(response)
       this.organization = response.data.organizationName
