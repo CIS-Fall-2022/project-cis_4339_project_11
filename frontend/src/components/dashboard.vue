@@ -3,7 +3,7 @@
     <div>
       <h1 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">Welcome</h1>
     </div>
-    <div class="container mx-auto my-auto">
+    <div class="container mx-auto h-4/6 w-4/6">
       <canvas ref="LineChart"></canvas>
     </div>
   </main>
