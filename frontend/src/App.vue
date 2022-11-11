@@ -64,7 +64,7 @@ export default {
   name: "App",
   data(){
     return{
-      organization:'test',
+      organization:'',
     };
   },
   methods: {
