@@ -3,7 +3,9 @@
     <div>
       <h1 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">Welcome</h1>
     </div>
-    <canvas ref="LineChart"></canvas>
+    <div class="container mx-auto my-auto">
+      <canvas ref="LineChart"></canvas>
+    </div>
   </main>
 </template>
 <script>
@@ -44,7 +46,7 @@ export default {
   async mounted() {
     await this.fetchchartdata();
      new Chart(this.$refs.LineChart, {
-      type: "bar",
+      type: 'bar',
       data: {
         labels: this.labels,
         datasets: [
