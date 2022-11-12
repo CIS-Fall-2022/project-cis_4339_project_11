@@ -72,9 +72,9 @@ export default {
           `/eventdata/client/${this.$route.params.id}`
       )
       .then((resp) => {
-        let data = resp.data;
         resp.data.forEach((event) => {
           this.clientEvents.push({
+            eventID: event._id,
             eventName: event.eventName,
             eventDate: event.date,
           });
@@ -103,6 +103,15 @@ export default {
           console.log(error);
         });
       });
+    },
+    deleteEventFromClient(eventid) {
+      if(confirm("Are you sure you want to remove this event from this user?")){
+        let apiURL =
+          import.meta.env.VITE_ROOT_API + `/eventdata/removeAttendee/` + eventid;
+        axios.put(apiURL, { attendee: this.$route.params.id }).then(() => {
+          window.location.reload();
+        });
+      }
     },
     addToEvent() {
       this.eventsChosen.forEach((event) => {
@@ -353,12 +362,17 @@ export default {
                 <tr>
                   <th class="p-4 text-left">Event Name</th>
                   <th class="p-4 text-left">Date</th>
+                  <th class="p-4 text-left"></th>                  
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-300">
-                <tr v-for="event in clientEvents" :key="event._id">
+                <tr v-for="event in clientEvents" :key="event.eventID">
                   <td class="p-2 text-left">{{ event.eventName }}</td>
                   <td class="p-2 text-left">{{ formattedDate(event.eventDate) }}</td>
+                  <td><button
+                        type="submit"
+                        class="bg-red-700 text-white rounded"
+                        @click="deleteEventFromClient(event.eventID)">Remove</button></td>
                 </tr>
               </tbody>
             </table>

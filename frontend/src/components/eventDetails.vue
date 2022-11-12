@@ -220,6 +220,7 @@
                   <th class="p-4 text-left">Name</th>
                   <th class="p-4 text-left">City</th>
                   <th class="p-4 text-left">Phone Number</th>
+                  <th class="p-4 text-left"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-300">
@@ -233,6 +234,11 @@
                   >{{ client.attendeeFirstName + " " + client.attendeeLastName }}</td>
                   <td class="p-2 text-left">{{ client.attendeeCity }}</td>
                   <td class="p-2 text-left">{{ client.attendeePhoneNumber }}</td>
+                  <!-- https://stackoverflow.com/a/68838535 used to find a way to not open the edit page when clicking delete button-->
+                  <td @click.stop><button
+                        type="submit"
+                        class="bg-red-700 text-white rounded"
+                        @click="removeFromEvent(client.attendeeID)">Remove</button></td>
                 </tr>
               </tbody>
             </table>
@@ -319,6 +325,15 @@ export default {
           console.log(error);
         });
       });
+    },
+    removeFromEvent(clientid) {
+      if(confirm("Are you sure you want to remove this event from this user?")){
+        let apiURL =
+          import.meta.env.VITE_ROOT_API + `/eventdata/removeAttendee/` + this.$route.params.id;
+        axios.put(apiURL, { attendee: clientid }).then(() => {
+          window.location.reload();
+        });
+      }
     },
     editClient(clientID) {
       this.$router.push({ name: "updateclient", params: { id: clientID } });

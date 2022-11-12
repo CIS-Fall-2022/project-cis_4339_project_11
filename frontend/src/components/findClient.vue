@@ -81,6 +81,7 @@
               <th class="p-4 text-left">Name</th>
               <th class="p-4 text-left">Phone number</th>
               <th class="p-4 text-left">City</th>
+              <th class="p-4 text-left"></th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-300">
@@ -88,6 +89,11 @@
               <td class="p-2 text-left">{{ client.firstName + " " + client.lastName }}</td>
               <td class="p-2 text-left">{{ client.phoneNumbers[0].primaryPhone }}</td>
               <td class="p-2 text-left">{{ client.address.city }}</td>
+              <!-- https://stackoverflow.com/a/68838535 used to find a way to not open the edit page when clicking delete button-->
+              <td @click.stop><button
+                        type="submit"
+                        class="bg-red-700 text-white rounded"
+                        @click="deleteClient(client._id)">Delete</button></td>
             </tr>
           </tbody>
         </table>
@@ -131,6 +137,15 @@ export default {
       axios.get(apiURL).then((resp) => {
         this.queryData = resp.data;
       });
+    },
+    deleteClient(clientid) {
+      if(confirm("Are you sure you want to permanently delete this client? This cannot be undone.")){
+        let apiURL =
+          import.meta.env.VITE_ROOT_API + `/primarydata/` + clientid;
+        axios.delete(apiURL).then(() => {
+          window.location.reload();
+        });
+      }
     },
     clearSearch() {
       //Resets all the variables
