@@ -125,7 +125,33 @@ router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount 
             res.json(data);
         }
     })
-})
+});
+
+//GET request for table, showing the event name and number of attendees
+router.get("/dash-table", (req,res,next) =>{
+    eventdata.aggregate([
+        {
+        '$match': {
+          'organization_id': process.env.ORGANIZATION
+        }
+        },
+        {
+          '$project': {
+            'eventName': 1, 
+            'attendees': {
+              '$size': '$attendees'
+            }
+          }
+        }
+      ],
+      (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+});
 
 //POST
 router.post("/", (req, res, next) => { 
