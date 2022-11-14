@@ -137,10 +137,12 @@ router.get("/dash-table", (req,res,next) =>{
         },
         {
           '$project': {
+            '_id': 0,
             'eventName': 1, 
             'attendees': {
               '$size': '$attendees'
-            }
+            },
+            'date':1
           }
         }
       ],
