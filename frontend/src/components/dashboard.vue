@@ -5,8 +5,16 @@
     </div>
     <!-- Graphs for Attendees per Month -->
     <div class="container mx-auto h-4/6 w-4/6">
-      <canvas ref="LineChart"></canvas>
+      <canvas v-if="errorData.length === 0" ref="BarChart"></canvas>
+      <!-- Error render -->
+      <div v-else class="bg-transparent text-center py-4 lg:px-4">
+        <div class="p-2 bg-red-600 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+          <span class="flex rounded-full bg-red-400 text-white uppercase px-2 py-1 text-xs font-bold mr-3">Error</span>
+          <span class="font-semibold mr-2 text-left text-white flex-auto">{{errorData}}: Website not connected to server</span>
+        </div>
+  </div>
     </div>
+
 <!-- Chart displaying all Attendees per Event -->
     <section class="pt-6 container mx-auto">
       <table class="min-w-full shadow-md rounded">
@@ -49,7 +57,8 @@ export default {
     return {
       labels: [],
       chartData: [],
-      eventQuery: [] //Stores dash-table json 
+      eventQuery: [], //Stores dash-table json 
+      errorData: [], //Stores Errors for API call.
     }
   },
   methods: {
@@ -62,11 +71,17 @@ export default {
     async fetchchartdata() {
       //fetches data for graph
       const apiURL = import.meta.env.VITE_ROOT_API + `/eventData/dashboard`
-      let  response = await axios.get(apiURL);
+      let  response = await axios.get(apiURL).catch(error => {
+        console.log(error.message)
+        this.errorData = error.message
+        // alert(`ERROR: ${this.errorData}`)
+      });
       this.labels = response.data.map((item) => toMonthName(item.month))
       this.chartData = response.data.map((item) => item.attendees)
       // console.log(this.labels) //For debugging
       // console.log(this.chartData)
+      console.log(this.errorData)
+      
     },
     async fetchtable() {
       const apiURL = import.meta.env.VITE_ROOT_API + `/eventData/dash-table`
@@ -76,7 +91,7 @@ export default {
   },
   async mounted() {
     await this.fetchchartdata();
-     new Chart(this.$refs.LineChart, {
+     new Chart(this.$refs.BarChart, {
       type: 'bar',
       data: {
         labels: this.labels,
@@ -99,5 +114,8 @@ export default {
     });
     await this.fetchtable();
   },
+  updated(){
+    console.log(this.errorData)
+  }
 };
 </script>

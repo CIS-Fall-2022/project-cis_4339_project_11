@@ -68,6 +68,10 @@ router.get("/client/:id", (req, res, next) => {
 
 //GET request for dashboard component
 router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount of attendees that signed of for an event each month
+    //Gets current month number for filtering in line 112
+    const d = new Date();
+    let month = d.getMonth() + 1; // Month with be returned from 0 - 11, so I add 11 to be accurate
+    // console.log(month)
     eventdata.aggregate([
         {
           '$match': {
@@ -104,6 +108,13 @@ router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount 
                 'month': '$_id',
                 'attendees': '$attendees_count',
             }
+        },
+        //Filters to only show current month + last to months. Nothing before, nothing after
+        {
+            '$match': {'$and': [
+                {'month' : {'$lte' : month}},
+                {'month' : {'$gte' : month - 2}}
+            ]}
         },
         { $sort : { month : 1 } }
         //RESULTING JSON:
