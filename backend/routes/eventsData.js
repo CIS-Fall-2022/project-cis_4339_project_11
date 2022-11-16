@@ -68,6 +68,10 @@ router.get("/client/:id", (req, res, next) => {
 
 //GET request for dashboard component
 router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount of attendees that signed of for an event each month
+    //Gets current month number for filtering in line 112
+    const d = new Date();
+    let month = d.getMonth() + 1; // Month with be returned from 0 - 11, so I add 11 to be accurate
+    // console.log(month)
     eventdata.aggregate([
         {
           '$match': {
@@ -97,16 +101,31 @@ router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount 
               '$sum': '$attendees_count'
             }
           }
-        }
+        },
+        {
+            '$project':{
+                '_id': 0,
+                'month': '$_id',
+                'attendees': '$attendees_count',
+            }
+        },
+        //Filters to only show current month + last to months. Nothing before, nothing after
+        {
+            '$match': {'$and': [
+                {'month' : {'$lte' : month}},
+                {'month' : {'$gte' : month - 2}}
+            ]}
+        },
+        { $sort : { month : 1 } }
         //RESULTING JSON:
         // [
         //     {
-        //         "_id": 10, //MONTH (1-12)
+        //         "month": 10, //MONTH (1-12)
         //         "attendees_count": 3  //Number of event attendees thats month
         //     },
         //     {
-        //         "_id": 11,
-        //         "attendees_count": 3
+        //         "month": 11,
+        //         "attendees": 3
         //     }
         // ]
       ],
@@ -117,7 +136,35 @@ router.get("/dashboard",(req,res,next)=>{ //GET requests that counts the amount 
             res.json(data);
         }
     })
-})
+});
+
+//GET request for table, showing the event name and number of attendees
+router.get("/dash-table", (req,res,next) =>{
+    eventdata.aggregate([
+        {
+        '$match': {
+          'organization_id': process.env.ORGANIZATION
+        }
+        },
+        {
+          '$project': {
+            '_id': 0,
+            'eventName': 1, 
+            'attendees': {
+              '$size': '$attendees'
+            },
+            'date':1
+          }
+        }
+      ],
+      (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+});
 
 //POST
 router.post("/", (req, res, next) => { 
