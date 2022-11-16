@@ -124,13 +124,9 @@ export default {
               import.meta.env.VITE_ROOT_API +
                 `/eventdata/client/${this.$route.params.id}`
             )
-            .then((resp) => {
-              let data = resp.data;
-              for (let i = 0; i < data.length; i++) {
-                this.clientEvents.push({
-                  eventName: data[i].eventName,
-                });
-              }
+            .then(() => {
+              window.location.reload(); // section of code here that previously pushed each event onto the page had issues. (unable to delete, Invalid DateTime, multiple copies of the same events until we delete)
+                                        // we replaced it with a page refresh instead which gave us the intended results every time
             });
         });
       });
