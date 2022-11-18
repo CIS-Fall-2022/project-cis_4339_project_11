@@ -48,7 +48,7 @@
           background: linear-gradient(250deg, #C8102E 70%, #efecec 50.6%);
         "
       >
-        <h1 class="mr-20 text-3xl text-white">{{organization}}</h1>
+        <h1 class="mr-20 text-3xl text-white">{{organization}}</h1><!-- addition of the orgainzation variable that is declared below in the script tag -->
       </section>
       <div>
         <router-view></router-view>
@@ -57,25 +57,25 @@
   </main>
 </template>
 
-<script>
+<script> // initialize script tag
 import axios from "axios";
 
-export default {
+export default { // create local registration of vue component -- source: https://stackoverflow.com/questions/48727863/vue-export-default-vs-new-vue
   name: "App",
   data(){
     return{
-      organization:'',
+      organization:'', // empty string for organizaiton name
     };
   },
   methods: {
-    async handleOrganizationName(){
-      let apiURL = import.meta.env.VITE_ROOT_API + `/organizationData/`;
+    async handleOrganizationName(){ //create async method that will handle the display of the organization name
+      let apiURL = import.meta.env.VITE_ROOT_API + `/organizationData/`; // declare variable to be api route that returns org information
       let response = await axios.get(apiURL)
-      this.organization = response.data.organizationName
+      this.organization = response.data.organizationName // get only the organizaaiton name and place it in the empty string above
     }
 
    },
-   async mounted(){
+   async mounted(){ // async mount of the handle organization name method
     await this.handleOrganizationName()
 
    },
